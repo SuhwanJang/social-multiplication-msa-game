@@ -8,5 +8,15 @@ public enum Badge {
 
     FIRST_ATTEMPT,
     FIRST_WON,
-    LUCKY_NUMBER
+    LUCKY_NUMBER;
+
+    public int getScore() {
+        if (this.equals(BRONZE)) {
+            return 100;
+        } else if (this.equals(SILVER)) {
+            return 500;
+        } else {
+            return 999;
+        }
+    }
 }
