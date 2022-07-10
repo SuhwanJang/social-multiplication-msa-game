@@ -48,7 +48,7 @@ public class GameServiceImpl implements GameService {
         List<BadgeCard> badgeCards = new ArrayList<>();
         int totalScore = scoreCardRepository.getTotalScoreForUser(userId);
         List<ScoreCard> scoreCardList = scoreCardRepository.findByUserIdOrderByScoreTimestampDesc(userId);
-        if (scoreCardList.isEmpty()) {
+        if (scoreCardList.size() == 1) {
             BadgeCard firstWon = giveBadgeToUser(FIRST_WON, userId);
             badgeCards.add(firstWon);
         }
